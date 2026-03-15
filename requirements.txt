@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+python-dotenv
+python-jose[cryptography]
+python-multipart
+torch
+transformers
+peft
+accelerate
+wandb
+rouge-score
+bert-score
+nltk
+supabase
+opencv-python
+pillow
+pandas
