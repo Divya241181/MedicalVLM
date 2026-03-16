@@ -44,24 +44,23 @@ MODEL_PATH     = os.getenv("MODEL_PATH", "./checkpoints")
 
 def verify_token(credentials: HTTPAuthorizationCredentials = Depends(security)):
     try:
-        # Supabase JWTs are signed with HS256 using the JWT secret
-        payload = jwt.decode(
-            credentials.credentials,
-            JWT_SECRET,
-            algorithms=["HS256"],
-            options={
-                "verify_aud"        : False,
-                "verify_exp"        : True,
-                "verify_signature"  : True
-            }
-        )
-        user_id = payload.get("sub")
-        if not user_id:
-            raise HTTPException(status_code=401, detail="Invalid token payload")
-        return user_id
-    except JWTError as e:
-        logger.error(f"JWT error: {e}")
+        from supabase import create_client
+        sb = create_client(SUPABASE_URL, SUPABASE_KEY)
+
+        # Ask Supabase to verify the token directly
+        response = sb.auth.get_user(credentials.credentials)
+
+        if not response or not response.user:
+            raise HTTPException(status_code=401, detail="Invalid token")
+
+        return response.user.id
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Token verification error: {e}")
         raise HTTPException(status_code=401, detail="Invalid or expired token")
+
 # ── Model globals (loaded once at startup) ────────────────────────────
 model_instance  = None
 processor_inst  = None
@@ -256,16 +255,21 @@ async def save_to_history(user_id: str, image_name: str,
                           report: str, bleu_score: float):
     try:
         from supabase import create_client
-        sb = create_client(SUPABASE_URL, SUPABASE_KEY)
-        sb.table("report_history").insert({
+        sb  = create_client(SUPABASE_URL, SUPABASE_KEY)
+
+        # Use service role for inserts to bypass RLS issues
+        data = {
             "user_id"          : user_id,
             "image_name"       : image_name,
             "generated_report" : report,
             "bleu_score"       : bleu_score
-        }).execute()
-        logger.info(f"Report saved to history for user {user_id[:8]}...")
+        }
+        result = sb.table("report_history").insert(data).execute()
+        logger.info(f"Saved to history: {result.data}")
+        return True
     except Exception as e:
-        logger.warning(f"Failed to save to history: {e}")
+        logger.error(f"History save failed: {e}")
+        return False
 
 # ══════════════════════════════════════════════════════════════════════
 # ENDPOINTS
@@ -319,12 +323,16 @@ async def generate_report(
         # ── Generate report ───────────────────────────────────────────
         with torch.no_grad():
             generated_ids = model_instance.generate(
-                pixel_values       = pixel_values,
-                max_new_tokens     = 128,
-                num_beams          = 4,
-                no_repeat_ngram_size = 3,
-                early_stopping     = True,
-                length_penalty     = 1.0
+                pixel_values          = pixel_values,
+                max_new_tokens        = 128,
+                num_beams             = 4,
+                no_repeat_ngram_size  = 4,
+                early_stopping        = True,
+                length_penalty        = 2.0,
+                repetition_penalty    = 3.0,
+                min_length            = 20,
+                temperature           = 1.0,
+                forced_eos_token_id   = processor_inst.tokenizer.eos_token_id
             )
 
         # ── Decode report ─────────────────────────────────────────────
@@ -377,13 +385,19 @@ async def generate_report(
 
 @app.get("/history")
 async def get_history(
-    user_id : str = Depends(verify_token),
-    limit   : int = 20,
-    offset  : int = 0
+    credentials : HTTPAuthorizationCredentials = Depends(security),
+    limit        : int = 20,
+    offset       : int = 0
 ):
     try:
+        # Verify token and get user_id
+        user_id = verify_token(credentials)
+
         from supabase import create_client
         sb = create_client(SUPABASE_URL, SUPABASE_KEY)
+
+        # Set auth header so RLS policy allows the query
+        sb.postgrest.auth(credentials.credentials)
 
         response = sb.table("report_history") \
             .select("*") \
@@ -394,10 +408,12 @@ async def get_history(
             .execute()
 
         return {
-            "reports": response.data,
-            "total"  : len(response.data)
+            "reports" : response.data,
+            "total"   : len(response.data)
         }
 
+    except HTTPException:
+        raise
     except Exception as e:
         logger.error(f"History fetch error: {e}")
         raise HTTPException(
