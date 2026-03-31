@@ -1,0 +1,490 @@
+﻿.\venv\Scripts\python.exe : 
+INFO:     Started server 
+process [3308]
+At line:1 char:1
++ .\venv\Scripts\python.exe 
+-m uvicorn 
+backend.api.main:app --host 
+0.0. ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (INFO:    
+     Started server proces   
+ s [3308]:String) [], Rem    
+oteException
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+INFO:     Waiting for 
+application startup.
+2026-03-31 17:36:54,204 
+[INFO] medvlm ù Device: cpu 
+| CUDA available: False
+2026-03-31 17:36:54,867 
+[INFO] httpx ù HTTP Request: 
+GET https://huggingface.co/ap
+i/models/llava-hf/llava-1.5-7
+b-hf/tree/main/additional_cha
+t_templates?recursive=false&e
+xpand=false "HTTP/1.1 404 
+Not Found"
+2026-03-31 17:36:55,126 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/l
+lava-hf/llava-1.5-7b-hf/resol
+ve/main/processor_config.json
+ "HTTP/1.1 307 Temporary 
+Redirect"
+2026-03-31 17:36:55,156 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/a
+pi/resolve-cache/models/llava
+-hf/llava-1.5-7b-hf/b234b804b
+114d9e37bb655e11cbbb5f5e971b7
+a9/processor_config.json 
+"HTTP/1.1 200 OK"
+2026-03-31 17:36:55,416 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/l
+lava-hf/llava-1.5-7b-hf/resol
+ve/main/chat_template.json 
+"HTTP/1.1 307 Temporary 
+Redirect"
+2026-03-31 17:36:55,447 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/a
+pi/resolve-cache/models/llava
+-hf/llava-1.5-7b-hf/b234b804b
+114d9e37bb655e11cbbb5f5e971b7
+a9/chat_template.json 
+"HTTP/1.1 200 OK"
+2026-03-31 17:36:55,702 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/l
+lava-hf/llava-1.5-7b-hf/resol
+ve/main/chat_template.jinja 
+"HTTP/1.1 307 Temporary 
+Redirect"
+2026-03-31 17:36:55,734 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/a
+pi/resolve-cache/models/llava
+-hf/llava-1.5-7b-hf/b234b804b
+114d9e37bb655e11cbbb5f5e971b7
+a9/chat_template.jinja 
+"HTTP/1.1 200 OK"
+2026-03-31 17:36:55,993 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/l
+lava-hf/llava-1.5-7b-hf/resol
+ve/main/audio_tokenizer_confi
+g.json "HTTP/1.1 404 Not 
+Found"
+2026-03-31 17:36:56,251 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/l
+lava-hf/llava-1.5-7b-hf/resol
+ve/main/processor_config.json
+ "HTTP/1.1 307 Temporary 
+Redirect"
+Warning: You are sending 
+unauthenticated requests to 
+the HF Hub. Please set a 
+HF_TOKEN to enable higher 
+rate limits and faster 
+downloads.
+2026-03-31 17:36:56,252 
+[WARNING] 
+huggingface_hub.utils._http 
+ù Warning: You are sending 
+unauthenticated requests to 
+the HF Hub. Please set a 
+HF_TOKEN to enable higher 
+rate limits and faster 
+downloads.
+2026-03-31 17:36:56,282 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/a
+pi/resolve-cache/models/llava
+-hf/llava-1.5-7b-hf/b234b804b
+114d9e37bb655e11cbbb5f5e971b7
+a9/processor_config.json 
+"HTTP/1.1 200 OK"
+2026-03-31 17:36:56,546 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/l
+lava-hf/llava-1.5-7b-hf/resol
+ve/main/preprocessor_config.j
+son "HTTP/1.1 307 Temporary 
+Redirect"
+2026-03-31 17:36:56,581 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/a
+pi/resolve-cache/models/llava
+-hf/llava-1.5-7b-hf/b234b804b
+114d9e37bb655e11cbbb5f5e971b7
+a9/preprocessor_config.json 
+"HTTP/1.1 200 OK"
+The image processor of type 
+`CLIPImageProcessor` is now 
+loaded as a fast processor 
+by default, even if the 
+model checkpoint was saved 
+with a slow processor. This 
+is a breaking change and may 
+produce slightly different 
+outputs. To continue using 
+the slow processor, 
+instantiate this class with 
+`use_fast=False`. 
+2026-03-31 17:36:56,856 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/l
+lava-hf/llava-1.5-7b-hf/resol
+ve/main/processor_config.json
+ "HTTP/1.1 307 Temporary 
+Redirect"
+2026-03-31 17:36:56,884 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/a
+pi/resolve-cache/models/llava
+-hf/llava-1.5-7b-hf/b234b804b
+114d9e37bb655e11cbbb5f5e971b7
+a9/processor_config.json 
+"HTTP/1.1 200 OK"
+2026-03-31 17:36:57,143 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/l
+lava-hf/llava-1.5-7b-hf/resol
+ve/main/preprocessor_config.j
+son "HTTP/1.1 307 Temporary 
+Redirect"
+2026-03-31 17:36:57,175 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/a
+pi/resolve-cache/models/llava
+-hf/llava-1.5-7b-hf/b234b804b
+114d9e37bb655e11cbbb5f5e971b7
+a9/preprocessor_config.json 
+"HTTP/1.1 200 OK"
+2026-03-31 17:36:57,433 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/l
+lava-hf/llava-1.5-7b-hf/resol
+ve/main/config.json 
+"HTTP/1.1 307 Temporary 
+Redirect"
+2026-03-31 17:36:57,467 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/a
+pi/resolve-cache/models/llava
+-hf/llava-1.5-7b-hf/b234b804b
+114d9e37bb655e11cbbb5f5e971b7
+a9/config.json "HTTP/1.1 200 
+OK"
+2026-03-31 17:36:57,743 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/l
+lava-hf/llava-1.5-7b-hf/resol
+ve/main/tokenizer_config.json
+ "HTTP/1.1 307 Temporary 
+Redirect"
+2026-03-31 17:36:57,776 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/a
+pi/resolve-cache/models/llava
+-hf/llava-1.5-7b-hf/b234b804b
+114d9e37bb655e11cbbb5f5e971b7
+a9/tokenizer_config.json 
+"HTTP/1.1 200 OK"
+2026-03-31 17:36:58,044 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/l
+lava-hf/llava-1.5-7b-hf/resol
+ve/main/tokenizer_config.json
+ "HTTP/1.1 307 Temporary 
+Redirect"
+2026-03-31 17:36:58,082 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/a
+pi/resolve-cache/models/llava
+-hf/llava-1.5-7b-hf/b234b804b
+114d9e37bb655e11cbbb5f5e971b7
+a9/tokenizer_config.json 
+"HTTP/1.1 200 OK"
+2026-03-31 17:36:58,343 
+[INFO] httpx ù HTTP Request: 
+GET https://huggingface.co/ap
+i/models/llava-hf/llava-1.5-7
+b-hf/tree/main/additional_cha
+t_templates?recursive=false&e
+xpand=false "HTTP/1.1 404 
+Not Found"
+2026-03-31 17:36:59,031 
+[INFO] httpx ù HTTP Request: 
+GET https://huggingface.co/ap
+i/models/llava-hf/llava-1.5-7
+b-hf/tree/main?recursive=true
+&expand=false "HTTP/1.1 200 
+OK"
+2026-03-31 17:36:59,358 
+[INFO] medvlm ù Loading 
+LLaVA in float32 on CPU 
+(slow) à
+2026-03-31 17:36:59,608 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/l
+lava-hf/llava-1.5-7b-hf/resol
+ve/main/config.json 
+"HTTP/1.1 307 Temporary 
+Redirect"
+2026-03-31 17:36:59,640 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/a
+pi/resolve-cache/models/llava
+-hf/llava-1.5-7b-hf/b234b804b
+114d9e37bb655e11cbbb5f5e971b7
+a9/config.json "HTTP/1.1 200 
+OK"
+2026-03-31 17:36:59,911 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/l
+lava-hf/llava-1.5-7b-hf/resol
+ve/main/config.json 
+"HTTP/1.1 307 Temporary 
+Redirect"
+2026-03-31 17:36:59,943 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/a
+pi/resolve-cache/models/llava
+-hf/llava-1.5-7b-hf/b234b804b
+114d9e37bb655e11cbbb5f5e971b7
+a9/config.json "HTTP/1.1 200 
+OK"
+2026-03-31 17:37:00,206 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/l
+lava-hf/llava-1.5-7b-hf/resol
+ve/main/model.safetensors 
+"HTTP/1.1 404 Not Found"
+2026-03-31 17:37:00,463 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/l
+lava-hf/llava-1.5-7b-hf/resol
+ve/main/model.safetensors.ind
+ex.json "HTTP/1.1 307 
+Temporary Redirect"
+2026-03-31 17:37:00,493 
+[INFO] httpx ù HTTP Request: 
+HEAD https://huggingface.co/a
+pi/resolve-cache/models/llava
+-hf/llava-1.5-7b-hf/b234b804b
+114d9e37bb655e11cbbb5f5e971b7
+a9/model.safetensors.index.js
+on "HTTP/1.1 200 OK"
+2026-03-31 17:37:00,800 
+[INFO] httpx ù HTTP Request: 
+GET https://huggingface.co/ap
+i/models/llava-hf/llava-1.5-7
+b-hf/revision/main "HTTP/1.1 
+200 OK"
+
+Fetching 3 files:   0%|      
+    | 0/3 [00:00<?, ?it/s]
+Fetching 3 files: 
+100%|##########| 3/3 
+[00:00<00:00, 4490.69it/s]
+
+Loading weights:   0%|       
+   | 0/686 [00:00<?, ?it/s]
+Loading weights:   0%|       
+   | 1/686 [00:00<02:35,  
+4.41it/s]
+Loading weights:   2%|1      
+   | 13/686 [00:00<00:14, 
+47.36it/s]
+Loading weights:   3%|3      
+   | 22/686 [00:00<00:14, 
+45.89it/s]
+Loading weights:   5%|4      
+   | 31/686 [00:00<00:13, 
+49.23it/s]
+Loading weights:   6%|5      
+   | 40/686 [00:00<00:12, 
+50.70it/s]
+Loading weights:   7%|7      
+   | 49/686 [00:01<00:12, 
+49.92it/s]
+Loading weights:   8%|8      
+   | 58/686 [00:01<00:13, 
+48.10it/s]
+Loading weights:  10%|9      
+   | 67/686 [00:04<01:10,  
+8.73it/s]
+Loading weights:  11%|#1     
+   | 76/686 [00:05<01:15,  
+8.09it/s]
+Loading weights:  12%|#1     
+   | 82/686 [00:05<00:59, 
+10.08it/s]
+Loading weights:  13%|#2     
+   | 86/686 [00:05<00:57, 
+10.37it/s]
+Loading weights:  13%|#3     
+   | 92/686 [00:05<00:44, 
+13.23it/s]
+Loading weights:  14%|#3     
+   | 96/686 [00:06<01:01,  
+9.62it/s]
+Loading weights:  15%|#4     
+   | 100/686 [00:06<00:52, 
+11.20it/s]
+Loading weights:  15%|#5     
+   | 103/686 [00:07<01:05,  
+8.90it/s]
+Loading weights:  15%|#5     
+   | 105/686 [00:07<01:07,  
+8.66it/s]
+Loading weights:  16%|#5     
+   | 108/686 [00:08<01:12,  
+8.02it/s]
+Loading weights:  16%|#6     
+   | 110/686 [00:08<01:11,  
+8.08it/s]
+Loading weights:  16%|#6     
+   | 112/686 [00:08<01:23,  
+6.87it/s]
+Loading weights:  16%|#6     
+   | 113/686 [00:09<01:21,  
+7.04it/s]
+Loading weights:  17%|#6     
+   | 114/686 [00:09<01:19,  
+7.19it/s]
+Loading weights:  17%|#7     
+   | 118/686 [00:10<02:06,  
+4.49it/s]
+Loading weights:  17%|#7     
+   | 119/686 [00:11<02:59,  
+3.16it/s]
+Loading weights:  19%|#8     
+   | 127/686 [00:11<01:10,  
+7.91it/s]
+Loading weights:  19%|#8     
+   | 130/686 [00:12<02:04,  
+4.48it/s]
+Loading weights:  19%|#9     
+   | 132/686 [00:14<03:20,  
+2.76it/s]
+Loading weights:  20%|#9     
+   | 134/686 [00:16<03:41,  
+2.49it/s]
+Loading weights:  20%|#9     
+   | 136/686 [00:16<03:16,  
+2.80it/s]
+Loading weights:  20%|#9     
+   | 137/686 [00:16<03:10,  
+2.89it/s]
+Loading weights:  20%|##     
+   | 139/686 [00:17<03:27,  
+2.63it/s]
+Loading weights:  20%|##     
+   | 140/686 [00:17<03:01,  
+3.01it/s]
+Loading weights:  21%|##     
+   | 141/686 [00:17<02:40,  
+3.39it/s]
+Loading weights:  21%|##1    
+   | 145/686 [00:18<02:09,  
+4.18it/s]
+Loading weights:  21%|##1    
+   | 146/686 [00:18<02:13,  
+4.06it/s]
+Loading weights:  22%|##1    
+   | 148/686 [00:21<04:50,  
+1.85it/s]
+Loading weights:  22%|##1    
+   | 150/686 [00:21<03:59,  
+2.24it/s]
+Loading weights:  22%|##2    
+   | 154/686 [00:21<02:15,  
+3.91it/s]
+Loading weights:  23%|##2    
+   | 156/686 [00:22<02:19,  
+3.80it/s]
+Loading weights:  23%|##2    
+   | 157/686 [00:24<04:55,  
+1.79it/s]
+Loading weights:  23%|##3    
+   | 158/686 [00:24<04:33,  
+1.93it/s]
+Loading weights:  23%|##3    
+   | 159/686 [00:25<04:30,  
+1.95it/s]
+Loading weights:  24%|##3    
+   | 163/686 [00:26<02:44,  
+3.19it/s]
+Loading weights:  24%|##3    
+   | 164/686 [00:26<03:03,  
+2.85it/s]
+Loading weights:  24%|##4    
+   | 166/686 [00:32<10:14,  
+1.18s/it]
+Loading weights:  24%|##4    
+   | 167/686 [00:33<10:09,  
+1.17s/it]
+Loading weights:  24%|##4    
+   | 168/686 [00:34<08:36,  
+1.00it/s]
+Loading weights:  25%|##4    
+   | 169/686 [00:34<06:52,  
+1.25it/s]
+Loading weights:  25%|##4    
+   | 170/686 [00:34<05:23,  
+1.59it/s]
+Loading weights:  25%|##5    
+   | 174/686 [00:34<02:26,  
+3.50it/s]
+Loading weights:  26%|##5    
+   | 176/686 [01:32<1:13:14, 
+ 8.62s/it]
+Loading weights:  26%|##5    
+   | 176/686 [01:54<1:13:14, 
+ 8.62s/it]
+Loading weights:  26%|##5    
+   | 177/686 [02:20<2:10:30, 
+15.38s/it]
+Loading weights:  26%|##5    
+   | 178/686 [02:40<2:10:25, 
+15.40s/it]
+Loading weights:  26%|##6    
+   | 179/686 [03:25<2:15:57, 
+16.09s/it]
+Loading weights:  26%|##6    
+   | 180/686 [04:02<4:02:33, 
+28.76s/it]
+Loading weights:  26%|##6    
+   | 181/686 [04:03<3:02:12, 
+21.65s/it]
+Loading weights:  27%|##6    
+   | 182/686 [04:03<2:13:27, 
+15.89s/it]
+Loading weights:  27%|##7    
+   | 188/686 [04:03<40:37,  
+4.89s/it]  
+Loading weights:  28%|##7    
+   | 189/686 [04:04<35:11,  
+4.25s/it]
+Loading weights:  30%|###    
+   | 206/686 [04:04<07:40,  
+1.04it/s]
+Loading weights:  32%|###1   
+   | 219/686 [04:04<04:04,  
+1.91it/s]
+Loading weights:  35%|###4   
+   | 237/686 [04:04<02:04,  
+3.61it/s]
+Loading weights:  35%|###4   
+   | 237/686 [04:22<02:04,  
+3.61it/s]

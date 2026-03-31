@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "🚀 RUN PLATFORM (Unified)",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": ".\\run.bat",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "🐍 Backend (FastAPI)",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "backend.api.main:app",
+                "--port", "8000",
+                "--reload"
+            ],
+            "jinja": true,
+            "justMyCode": true,
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "⚛️ Frontend (React/Vite)",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "cd frontend && npm run dev",
+            "console": "integratedTerminal"
+        }
+    ]
+}

@@ -4,6 +4,7 @@ CREATE TABLE public.report_history (
   image_name  TEXT    NOT NULL,
   generated_report TEXT NOT NULL,
   bleu_score  FLOAT,
+  endpoint    TEXT NOT NULL DEFAULT 'generate',
   created_at  TIMESTAMPTZ DEFAULT NOW()
 );
 

@@ -23,20 +23,37 @@ export default function Navbar() {
         <div className="w-7 h-7 rounded-lg bg-teal-600 flex items-center justify-center text-white text-xs font-bold">M</div>
         MedVLM
       </Link>
+
       {user && (
         <div className="flex items-center gap-6 text-sm">
-          <Link to="/analyze" className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">Analyze</Link>
-          <Link to="/history" className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">History</Link>
+          <Link to="/analyze" className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
+            Analyze
+          </Link>
+          <Link to="/compare" className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
+            Compare
+          </Link>
+          <Link to="/history" className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
+            History
+          </Link>
         </div>
       )}
+
       <div className="flex items-center gap-3">
-        <button onClick={toggleDark} className="text-xs px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+        <button
+          onClick={toggleDark}
+          className="text-xs px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+        >
           {dark ? 'Light' : 'Dark'}
         </button>
         {user && (
           <>
             <span className="text-xs text-gray-400 hidden sm:block">{user?.email}</span>
-            <button onClick={handleSignOut} className="text-xs px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Sign out</button>
+            <button
+              onClick={handleSignOut}
+              className="text-xs px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+            >
+              Sign out
+            </button>
           </>
         )}
       </div>

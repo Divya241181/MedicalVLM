@@ -6,6 +6,7 @@ import Signup         from './pages/Signup'
 import Analyze        from './pages/Analyze'
 import Results        from './pages/Results'
 import History        from './pages/History'
+import Compare        from './pages/Compare'
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/analyze" element={<ProtectedRoute><Analyze /></ProtectedRoute>} />
           <Route path="/results" element={<ProtectedRoute><Results /></ProtectedRoute>} />
           <Route path="/history" element={<ProtectedRoute><History /></ProtectedRoute>} />
+          <Route path="/compare" element={<ProtectedRoute><Compare /></ProtectedRoute>} />
           <Route path="*"        element={<Navigate to="/login" replace />} />
         </Routes>
       </div>

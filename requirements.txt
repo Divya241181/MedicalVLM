@@ -1,17 +1,26 @@
-fastapi
-uvicorn
-python-dotenv
-python-jose[cryptography]
-python-multipart
-torch
-transformers
-peft
-accelerate
-wandb
-rouge-score
-bert-score
-nltk
-supabase
-opencv-python
-pillow
-pandas
+# ── Core AI / ML ──────────────────────────────────────────────────────
+torch>=2.1.0
+transformers>=4.37.0
+accelerate>=0.26.0
+bitsandbytes>=0.42.0 # optional — enable load_in_4bit in lifespan if low VRAM
+
+# ── Vision & Image Processing ─────────────────────────────────────────
+Pillow>=10.0.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+pytorch-grad-cam>=1.5.0
+
+# ── FastAPI & Web ─────────────────────────────────────────────────────
+fastapi>=0.110.0
+uvicorn[standard]>=0.27.0
+python-multipart>=0.0.9
+
+# ── Auth & DB ─────────────────────────────────────────────────────────
+supabase>=2.3.0
+python-dotenv>=1.0.0
+
+# ── PDF Export ───────────────────────────────────────────────────────
+fpdf2>=2.7.9
+
+# ── Utilities ────────────────────────────────────────────────────────
+requests>=2.31.0

@@ -1,0 +1,39 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run MedVLM Platform",
+            "type": "shell",
+            "command": ".\\run.bat",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Backend: FastAPI",
+            "type": "shell",
+            "command": ".\\venv\\Scripts\\python.exe -m uvicorn backend.api.main:app --port 8000 --reload",
+            "group": "none",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Frontend: Vite",
+            "type": "shell",
+            "command": "cd frontend && npm run dev",
+            "group": "none",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        }
+    ]
+}

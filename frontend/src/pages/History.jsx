@@ -11,7 +11,10 @@ export default function History() {
   useEffect(() => {
     getHistory()
       .then(data => setReports(data.reports || []))
-      .catch(()  => setError('Failed to load history'))
+      .catch((err) => {
+        console.error('History fetch error:', err)
+        setError(err?.response?.data?.detail || 'Failed to load history')
+      })
       .finally(() => setLoading(false))
   }, [])
 
